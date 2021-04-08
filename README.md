@@ -2,10 +2,10 @@
 
 ## About
 
-Stale is a [DokuWiki Plugin](https://www.dokuwiki.org/plugin:stale) that touch configuration files (ie change only the modified date)
+Stale is a [DokuWiki Plugin](https://www.dokuwiki.org/plugin:stale) that touches configuration files (ie change only the modified date, not the content)
 in order to make the cache stale.
 
-Why ? Because this files are cache dependencies and if touched will then prohibit the use of the cache for the nextb request.
+Why ? Because these files are cache dependencies and if touched will then prohibit the use of the cache by the next request.
 
 
 ## Configuration file touched
@@ -13,16 +13,17 @@ Why ? Because this files are cache dependencies and if touched will then prohibi
 The following configuration files are touched:
 
   * the main configuration file: [local.php](https://www.dokuwiki.org/config)
-  * all plugin configuration file [plugin.info.txt](https://www.dokuwiki.org/devel:plugin_info)
+  * all plugin info file [plugin.info.txt](https://www.dokuwiki.org/devel:plugin_info)
+
+> Note that the plugins that are using the cache system, must make the cache dependent of their info file to get the cache stale
 
 ## How to touch ?
 
 You can touch them:
 
+  * in the [sitemenu tool](https://www.dokuwiki.org/devel:menus) via the hand icon ![Hand index icon](images/hand-index-fill.svg)
   * in the [admin page](https://www.dokuwiki.org/admin_window)
-  * in the [sitemenu tool](https://www.dokuwiki.org/devel:menus) via the hand icon
 
-![Hand index icon](images/hand-index-fill.svg)
 
 ## Reference
 
