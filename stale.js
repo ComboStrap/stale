@@ -45,7 +45,7 @@ jQuery('#plugin_stale')
                 });
 
                 // Close it if the user click
-                jQuery(document).onclick(function () {
+                jQuery(document).on("click", function () {
                     remove(dialogElement)
                 });
 
