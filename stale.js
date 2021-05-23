@@ -30,7 +30,7 @@ jQuery('#plugin_stale')
                         jElement.remove();
                         jQuery(document.activeElement).blur();
                     }
-                }
+                };
 
                 dialogElement.dialog({
                     dialogClass: "stale-dialog",
