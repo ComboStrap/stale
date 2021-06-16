@@ -29,5 +29,7 @@ You can touch them:
 
 Based on the [dead plugin toucher](https://github.com/anandr/dokuwiki-plugin-toucher/pull/2#issuecomment-809981442) idea.
 
+## Note
 
+By adding `?do=check` to a page, you can also do a configuration check.
 
