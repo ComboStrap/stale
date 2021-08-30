@@ -11,7 +11,7 @@ use helper_plugin_stale;
  * Implements the stale button
  * https://www.dokuwiki.org/devel:menus:example
  */
-class MenuItem extends AbstractItem
+class StaleMenuItem extends AbstractItem
 {
 
 
@@ -59,7 +59,8 @@ class MenuItem extends AbstractItem
 
     public function getLabel()
     {
-        return ucfirst(helper_plugin_stale::PLUGIN_NAME);
+        $stale = plugin_load('helper', helper_plugin_stale::PLUGIN_NAME);
+        return $stale->getLang("menuItemLabel");
     }
 
 

@@ -1,3 +1,3 @@
 <?php
 
-$lang['menu'] = '設定ファイルのタイムスタンプ更新';
+$lang['menuItemLinkTitle'] = '設定ファイルのタイムスタンプ更新';

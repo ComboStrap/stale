@@ -1,7 +1,7 @@
 <?php
 
 // must be run within Dokuwiki
-use dokuwiki\plugin\stale\MenuItem;
+use dokuwiki\plugin\stale\StaleMenuItem;
 
 if (!defined('DOKU_INC')) die();
 
@@ -74,7 +74,7 @@ class action_plugin_stale extends DokuWiki_Action_Plugin
         $stale = plugin_load('helper', 'stale');
         if ($stale->canTouch()===true){
 
-            array_splice($event->data['items'], -1, 0, array(new MenuItem()));
+            array_splice($event->data['items'], -1, 0, array(new StaleMenuItem()));
 
         }
 

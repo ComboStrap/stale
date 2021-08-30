@@ -146,7 +146,7 @@ class baseTest extends DokuWikiTest
 
     public function testMenuItem()
     {
-        $menuItem = new \dokuwiki\plugin\stale\MenuItem();
+        $menuItem = new \dokuwiki\plugin\stale\StaleMenuItem();
         $linkAttributes = $menuItem->getLinkAttributes();
 
     }

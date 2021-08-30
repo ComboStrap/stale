@@ -33,3 +33,10 @@ Based on the [dead plugin toucher](https://github.com/anandr/dokuwiki-plugin-tou
 
 By adding `?do=check` to a page, you can also do a configuration check.
 
+## Release
+
+  * 2021-08-30:
+     * The stale menu item is now a website item
+     * The action label is more clear and was added as language reference
+  * 2021-08-04:
+     * First release
