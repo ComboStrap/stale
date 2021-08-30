@@ -14,6 +14,7 @@ use helper_plugin_stale;
 class MenuItem extends AbstractItem
 {
 
+
     /**
      * The first compile time, the javascript may not
      * work, we send the user to the admin page
@@ -36,6 +37,7 @@ class MenuItem extends AbstractItem
     {
         $linkAttributes = parent::getLinkAttributes($classprefix);
 
+
         $linkAttributes['id'] = self::MENU_HTML_ELEMENT_ID;
 
         return $linkAttributes;
@@ -45,6 +47,8 @@ class MenuItem extends AbstractItem
     {
         return "admin";
     }
+
+
 
 
     public function getTitle()

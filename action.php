@@ -68,7 +68,7 @@ class action_plugin_stale extends DokuWiki_Action_Plugin
          * https://www.dokuwiki.org/devel:menus
          * If this is not the page menu, return
          */
-        if ($event->data['view'] != 'page') return;
+        if ($event->data['view'] != 'site') return;
 
         /** @var helper_plugin_stale $stale */
         $stale = plugin_load('helper', 'stale');
