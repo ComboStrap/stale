@@ -30,10 +30,11 @@ You can stale the cache:
 
 ## Release
 
+  * 2021-09-01:
+     * Delete the [sitemap](https://www.dokuwiki.org/sitemap)
   * 2021-08-30:
      * The stale menu item is now a website item
      * The action label is more clear and was added as language reference
-     * Delete the [sitemap](https://www.dokuwiki.org/sitemap)
   * 2021-08-04:
      * First release
 
