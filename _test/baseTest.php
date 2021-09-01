@@ -1,6 +1,5 @@
 <?php
 
-use ComboStrap\PluginUtility;
 use dokuwiki\plugin\config\core\ConfigParser;
 use dokuwiki\plugin\config\core\Loader;
 
@@ -40,6 +39,22 @@ class baseTest extends DokuWikiTest
         // Simple
         $countListContainer = $response->queryHTML("#plugin____" . helper_plugin_stale::PLUGIN_NAME . "____plugin_settings_name")->count();
         $this->assertEquals(1, $countListContainer, "There should an element");
+
+    }
+
+    public function test_delete_sitemap()
+    {
+
+        global $conf;
+        $cacheDirectory = $conf['cachedir'];
+        $file = $cacheDirectory . "/sitemap.xml.gz";
+        touch($file);
+
+        /** @var helper_plugin_stale $stale */
+        $stale = plugin_load('helper', 'stale');
+
+        $result = $stale->deleteSitemap();
+        $this->assertEquals(true, $result);
 
     }
 
@@ -144,12 +159,6 @@ class baseTest extends DokuWikiTest
 
     }
 
-    public function testMenuItem()
-    {
-        $menuItem = new \dokuwiki\plugin\stale\StaleMenuItem();
-        $linkAttributes = $menuItem->getLinkAttributes();
-
-    }
 
 
     private static function runAsAdmin(TestRequest $request = null, $user = 'admin')

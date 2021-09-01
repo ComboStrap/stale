@@ -19,8 +19,8 @@ class helper_plugin_stale extends DokuWiki_Plugin
         $dir = new DirectoryIterator(DOKU_PLUGIN);
         foreach ($dir as $file) {
             if ($file->isDir() && !$file->isDot()) {
-                $infoPlugin =  $file->getPathname()."/plugin.info.txt";
-                if (file_exists($infoPlugin)){
+                $infoPlugin = $file->getPathname() . "/plugin.info.txt";
+                if (file_exists($infoPlugin)) {
                     touch($infoPlugin);
                 }
             }
@@ -51,6 +51,34 @@ class helper_plugin_stale extends DokuWiki_Plugin
     public function getIcon()
     {
         return __DIR__ . '/images/hand-index-fill.svg';
+    }
+
+    public function deleteSitemap()
+    {
+        global $conf;
+        $cacheDirectory = $conf['cachedir'];
+        $file = $cacheDirectory . "/sitemap.xml.gz";
+        if (file_exists($file)) {
+            unlink($file);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public function stale()
+    {
+        $this->touchConfFiles();
+        $message = "The configurations files were touched.";
+        $deleted = $this->deleteSitemap();
+        if($deleted) {
+            $message .= "<br>The sitemap file was deleted.";
+        } else {
+            $message .= "<br>No sitemap was present.";
+        }
+        $message .= "<br>The cache is now stale.";
+        return $message;
     }
 
 }

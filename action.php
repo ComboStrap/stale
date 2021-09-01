@@ -49,9 +49,9 @@ class action_plugin_stale extends DokuWiki_Action_Plugin
             $message = "You don't have the right to touch";
         } else {
 
-            $stale->touchConfFiles();
-            $message = "The configurations files were touched. The cache is now stale.";
+            $message = $stale->stale();
             http_status(200);
+
         }
         $jsonArray = array("message" => $message);
         header('Content-Type: application/json');

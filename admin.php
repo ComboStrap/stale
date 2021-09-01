@@ -12,6 +12,11 @@ require_once DOKU_PLUGIN . 'admin.php';
 class admin_plugin_stale extends DokuWiki_Admin_Plugin
 {
 
+    /**
+     * @var string
+     */
+    private $msg;
+
     public function getMenuSort()
     {
         return 13;
@@ -43,18 +48,15 @@ class admin_plugin_stale extends DokuWiki_Admin_Plugin
             return false;
         }
 
+        $this->msg = $stale->stale();
 
-        $stale->touchConfFiles();
-
-        msg('Plugin stale has touched the configuration files', 1);
         return true;
     }
 
     public function html()
     {
-        ptln('<h1>' . $this->getLang('menu') . '</h1>');
-        ptln('<p>Configuration files have been touched.</p>');
-        ptln('<p>The cache is now stale.</p>');
+        ptln('<h1>' . $this->getLang('h1') . '</h1>');
+        ptln("<p>$this->msg</p>");
     }
 }
 
