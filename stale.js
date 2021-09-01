@@ -3,7 +3,7 @@
  *
  */
 
-jQuery('#plugin_stale')
+jQuery('.plugin_stale')
     .show()
     .click(function (e) {
         e.preventDefault();

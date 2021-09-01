@@ -37,8 +37,13 @@ class StaleMenuItem extends AbstractItem
     {
         $linkAttributes = parent::getLinkAttributes($classprefix);
 
-
-        $linkAttributes['id'] = self::MENU_HTML_ELEMENT_ID;
+        /**
+         * A class and not an id
+         * because a menu item can be found twice on
+         * a page (For instance if you want to display it in a layout at a
+         * breakpoint and at another in another breakpoint
+         */
+        $linkAttributes['class'] = self::MENU_HTML_ELEMENT_ID;
 
         return $linkAttributes;
     }
