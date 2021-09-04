@@ -30,6 +30,8 @@ You can stale the cache:
 
 ## Release
 
+  * 2021-09-04:
+     * As [per request 2](https://github.com/ComboStrap/stale/issues/2), Make the cache stale, reload the page and shows the feedback
   * 2021-09-01:
      * Delete the [sitemap](https://www.dokuwiki.org/sitemap)
   * 2021-08-30:
