@@ -13,7 +13,7 @@ For this purpose, it will :
 
 The following configuration files are touched:
 
-  * the main configuration file: [local.php](https://www.dokuwiki.org/config)
+  * the main configuration file: [local.php](https://www.dokuwiki.org/config) - [Ref](https://www.dokuwiki.org/devel:caching#purging_the_cache)
   * all plugin info file [plugin.info.txt](https://www.dokuwiki.org/devel:plugin_info)
 
 > Note that the plugins that are using the cache system, must make the cache dependent of their info file to get the cache stale
