@@ -32,7 +32,7 @@ class baseTest extends DokuWikiTest
     {
 
         $request = new TestRequest();
-        self::runAsAdmin($request);
+        TestUtility::runAsAdmin($request);
 
         $response = $request->get(array('do' => 'admin', 'page' => "config"), '/doku.php');
 
@@ -161,20 +161,7 @@ class baseTest extends DokuWikiTest
 
 
 
-    private static function runAsAdmin(TestRequest $request = null, $user = 'admin')
-    {
-        global $conf;
-        $conf['useacl'] = 1;
-        $conf['superuser'] = $user;
-        $conf['remoteuser'] = $user;
 
-        if ($request != null) {
-            $request->setServer('REMOTE_USER', $user);
-        } else {
-            global $INPUT;
-            $INPUT->server->set('REMOTE_USER', $user);
-        }
-    }
 
 
 }
