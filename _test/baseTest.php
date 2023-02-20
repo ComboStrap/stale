@@ -14,7 +14,7 @@ class baseTest extends DokuWikiTest
 {
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->pluginsEnabled[] = helper_plugin_stale::PLUGIN_NAME;
         parent::setUp();
@@ -32,7 +32,15 @@ class baseTest extends DokuWikiTest
     {
 
         $request = new TestRequest();
-        TestUtility::runAsAdmin($request);
+
+        // run as admin
+        global $conf;
+        $conf['useacl'] = 1;
+        $user = "admin";
+        $conf['superuser'] = $user;
+        $conf['remoteuser'] = $user;
+        $request->setServer('REMOTE_USER', $user);
+
 
         $response = $request->get(array('do' => 'admin', 'page' => "config"), '/doku.php');
 
@@ -158,10 +166,6 @@ class baseTest extends DokuWikiTest
 
 
     }
-
-
-
-
 
 
 }
