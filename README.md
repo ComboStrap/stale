@@ -13,7 +13,9 @@ For this purpose, it will :
 
 The following configuration files are touched:
 
-  * the main configuration file: [local.php](https://www.dokuwiki.org/config) - [Ref](https://www.dokuwiki.org/devel:caching#purging_the_cache)
+
+  * the main configuration file: [dokuwiki.php](https://www.dokuwiki.org/config) - [For Geshi](https://forum.dokuwiki.org/d/20833-how-to-make-change-to-geshi-language-file-have-effect-on-page-display/11)
+  * the local configuration file: [local.php](https://www.dokuwiki.org/config) - [Ref: Purging the cache](https://www.dokuwiki.org/devel:caching#purging_the_cache)
   * all plugin info file [plugin.info.txt](https://www.dokuwiki.org/devel:plugin_info)
 
 > Note that the plugins that are using the cache system, must make the cache dependent of their info file to get the cache stale
@@ -30,6 +32,8 @@ You can stale the cache:
 
 ## Release
 
+  * 2023-02-20:
+     * Touch the main configuration file `conf\dokuwiki.php` to delete the cache for [Geshi](https://forum.dokuwiki.org/d/20833-how-to-make-change-to-geshi-language-file-have-effect-on-page-display/11)
   * 2021-09-04:
      * As [per request 2](https://github.com/ComboStrap/stale/issues/2), Make the cache stale, reload the page and shows the feedback
   * 2021-09-01:

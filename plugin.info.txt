@@ -1,7 +1,7 @@
 base   stale
 author ComboStrap
 email  support@combostrap.com
-date   2021-09-04
+date   2023-02-20
 name   Stale plugin
-desc   Make the cache stale by by touching configuration files
+desc   Make the cache stale by touching configuration files
 url    https://www.dokuwiki.org/plugin:stale

@@ -15,7 +15,9 @@ class helper_plugin_stale extends DokuWiki_Plugin
     {
 
         touch(DOKU_CONF . "local.php");
-
+        // geshi dependent
+        // https://forum.dokuwiki.org/d/20833-how-to-make-change-to-geshi-language-file-have-effect-on-page-display/11
+        touch(DOKU_CONF . "dokuwiki.php");
         $dir = new DirectoryIterator(DOKU_PLUGIN);
         foreach ($dir as $file) {
             if ($file->isDir() && !$file->isDot()) {
@@ -72,7 +74,7 @@ class helper_plugin_stale extends DokuWiki_Plugin
         $this->touchConfFiles();
         $message = "The configurations files were touched.";
         $deleted = $this->deleteSitemap();
-        if($deleted) {
+        if ($deleted) {
             $message .= "<br>The sitemap file was deleted.";
         } else {
             $message .= "<br>No sitemap was present.";
