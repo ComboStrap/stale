@@ -43,7 +43,7 @@ class helper_plugin_stale extends DokuWiki_Plugin
         $canTouch = true;
         if ($this->getConf(self::CONF_ADMIN_ONLY)) {
             global $USERINFO;
-            if (!auth_isadmin($_SERVER['REMOTE_USER'], $USERINFO['grps'])) {
+            if (!auth_isadmin($_SERVER['REMOTE_USER'] ?? null, $USERINFO['grps'] ?? null)) {
                 return "Only admin can touch";
             }
         }
